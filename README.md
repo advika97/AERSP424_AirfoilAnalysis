@@ -86,19 +86,15 @@ The project may satisfy most of the grading rubric:
 4.	Now, to setup wxWidgets:
 
 	a.	Download the following from https://www.wxwidgets.org/downloads/
-
-		i.	Latest Stable Release 3.2.4: Source Code -> Windows ZIP
-
-		ii.	Extract this zip file into c:\sdks\wx324 (so that all files are inside the wx324 directory (not wxWidgets-3.2.4 kind)
+		i. Latest Stable Release 3.2.4: Source Code -> Windows ZIP
+		ii. Extract this zip file into c:\sdks\wx324 (so that all files are inside the wx324 directory (not wxWidgets-3.2.4 kind)
 
 	b.	Open the folder c:\sdks\wx324 in file explorer, and navigate to C:\sdks\wx324\build\msw directory
 
 	c.	Double click on wx_vc17.sln file, which will open the project in Visual Studio (might take some time)
 
 	d.	After it is open, click on Build menu, select Batch Build.
-
 		i.	Here, click on the Select All button
-
 		ii.	Then click on Build or Build All
 
 	e.	This might take time.
@@ -121,17 +117,11 @@ The project may satisfy most of the grading rubric:
 	c. copy these two files to a c:\test\wxMinimal directory
 
 	d. In CMakeLists.txt, make the following changes:
-
 		i. Change the find_package line to the following:
-
 			find_package(wxWidgets REQUIRED core base gl OPTIONAL_COMPONENTS net propgrid aui adv)
-  	
 			include(${wxWidgets_USE_FILE})
-  	
 		ii. Change the target_link_libraries line to the following:
-
 			target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
-  	
 		iii. Remove the if-endif block statements before add_executable and after target_link_libraries.
 
 	
