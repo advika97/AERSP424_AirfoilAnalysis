@@ -77,77 +77,54 @@ The project may satisfy most of the grading rubric:
 
 ## Build Instructions
 1. Update Visual Studio 2022:
-	a.	C++ Development -> select CLang tools checkbox (let other selections remain as they are)
+	1. C++ Development -> select CLang tools checkbox (let other selections remain as they are)
+2. Upgrade Visual Studio 2022 to latest updates (it may take time).
+3. Reboot laptop.
+4. Now, to setup wxWidgets:
+	1. Download the following from https://www.wxwidgets.org/downloads/
+ 		1. Latest Stable Release 3.2.4: Source Code -> Windows ZIP
+		2. Extract this zip file into c:\sdks\wx324 (so that all files are inside the wx324 directory (not wxWidgets-3.2.4 kind)
+	2. Open the folder c:\sdks\wx324 in file explorer, and navigate to C:\sdks\wx324\build\msw directory
+	3. Double click on wx_vc17.sln file, which will open the project in Visual Studio (might take some time)
+	4. After it is open, click on Build menu, select Batch Build.
+ 		1. Here, click on the Select All button
+		2. Then click on Build or Build All
+	5. This might take time.
+ 	6. If the build fails, repeate #d above. Do not click on Rebuild.
+	7. Usually, build is successful, but be patient. Do not anything else on the laptop when the build is running.
+	8. Close Visual Studio. Reboot laptop.
+5. Now setup a System Environment Variable named WXWIN with value c:\sdks\wx324 (this is the path for the wxWidgets binaries).
+6. To test if wxWidgets is setup, first you can build and run a minimal sample code.
+	1. visit: https://docs.wxwidgets.org/latest/page_samples.html#page_samples_minimal
+	2. download minimal sample code from -> https://github.com/wxWidgets/wxWidgets/tree/master/samples/minimal (download CMakeLists.txt and minimal.cpp only)
+	3. copy these two files to a c:\test\wxMinimal directory
+	4. In CMakeLists.txt, make the following changes:
+		1. Change the find_package line to the following:
 
-2.	Upgrade Visual Studio 2022 to latest updates (it may take time).
-
-3.	Reboot laptop.
-
-4.	Now, to setup wxWidgets:
-
-	a.	Download the following from https://www.wxwidgets.org/downloads/
-		i. Latest Stable Release 3.2.4: Source Code -> Windows ZIP
-		ii. Extract this zip file into c:\sdks\wx324 (so that all files are inside the wx324 directory (not wxWidgets-3.2.4 kind)
-
-	b.	Open the folder c:\sdks\wx324 in file explorer, and navigate to C:\sdks\wx324\build\msw directory
-
-	c.	Double click on wx_vc17.sln file, which will open the project in Visual Studio (might take some time)
-
-	d.	After it is open, click on Build menu, select Batch Build.
-		i.	Here, click on the Select All button
-		ii.	Then click on Build or Build All
-
-	e.	This might take time.
-
-	f.	If the build fails, repeate #d above. Do not click on Rebuild.
-
-	g.	Usually, build is successful, but be patient. Do not anything else on the laptop when the build is running.
-
-	h.	Close Visual Studio. Reboot laptop.
-
-
-6.	Now setup a System Environment Variable named WXWIN with value c:\sdks\wx324 (this is the path for the wxWidgets binaries).
-
-7.	To test if wxWidgets is setup, first you can build and run a minimal sample code.
-
-	a. visit: https://docs.wxwidgets.org/latest/page_samples.html#page_samples_minimal
-
-	b. download minimal sample code from -> https://github.com/wxWidgets/wxWidgets/tree/master/samples/minimal (download CMakeLists.txt and minimal.cpp only)
-
-	c. copy these two files to a c:\test\wxMinimal directory
-
-	d. In CMakeLists.txt, make the following changes:
-		i. Change the find_package line to the following:
 			find_package(wxWidgets REQUIRED core base gl OPTIONAL_COMPONENTS net propgrid aui adv)
+
 			include(${wxWidgets_USE_FILE})
-		ii. Change the target_link_libraries line to the following:
+
+		2. Change the target_link_libraries line to the following:
+  
 			target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
-		iii. Remove the if-endif block statements before add_executable and after target_link_libraries.
+
+		3. Remove the if-endif block statements before add_executable and after target_link_libraries.
 
 	
-9.	Open Visual Studio -> and open folder c:\test\wxMinimal
+7. Open Visual Studio -> and open folder c:\test\wxMinimal
+	1. this will automatically invoke cmake and create the intermediate files and out directory
+	2. If there are cmake errors (typically related to find_package(wxWidgets 3.3...), then close Visual Studio.
+	3. Wait for 5 minutes.
+	4. Open Visual Studio again, and open recent folder.
+	5. From Project menu, click "Delete Cache and Reconfigure" menu
+	5. This will run cmake again. Hopefully, this time there should not be any cmake errors.
+	6. Now click on Build All from Build menu. If you don't see Build All menu item, then "Select Startup Item" first (next to Configuration drop down)
+	7. If there are any build errors, it means wxWidgets is not setup properly.
 
-	a.	this will automatically invoke cmake and create the intermediate files and out directory
+8. Download wxFormBuilder (wxFormBuilder-4.1.0-x64.exe) from : https://github.com/wxFormBuilder/wxFormBuilder/releases
+	1. this is required to design the GUI form.
 
-	b.	If there are cmake errors (typically related to find_package(wxWidgets 3.3...), then close Visual Studio.
-
-	c.	Wait for 5 minutes.
-
-	d.	Open Visual Studio again, and open recent folder.
-
-	e.	From Project menu, click "Delete Cache and Reconfigure" menu
-
-	f.	This will run cmake again. Hopefully, this time there should not be any cmake errors.
-
-	g.	Now click on Build All from Build menu. If you don't see Build All menu item, then "Select Startup Item" first (next to Configuration drop down)
-
-	i. 	If there are any build errors, it means wxWidgets is not setup properly.
-
-
-11.	Download wxFormBuilder (wxFormBuilder-4.1.0-x64.exe) from : https://github.com/wxFormBuilder/wxFormBuilder/releases
-
-	a.	this is required to design the GUI form.
-
-13. Clone this repository. Open folder in Visual Studio, CMake will run automatically. Build project and you are set!
+9. Clone this repository. Open folder in Visual Studio, CMake will run automatically. Build project and you are set!
 
 ### Let me know if you run into any problems.
