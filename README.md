@@ -127,4 +127,15 @@ The project may satisfy most of the grading rubric:
 
 9. Clone this repository. Open folder in Visual Studio, CMake will run automatically. Build project and you are set!
 
-### Let me know if you run into any problems.
+### Let me know if you run into any problems!
+
+
+## References
+
+1. https://matthias-research.github.io/pages/tenMinutePhysics/17-fluidSim.html
+2. https://matthias-research.github.io/pages/tenMinutePhysics/17-fluidSim.pdf
+3. https://github.com/matthias-research/pages/blob/master/tenMinutePhysics/17-fluidSim.html
+4. https://github.com/skhelladi/wxRTCFD_Code (professor in Paris)
+5. https://www.youtube.com/watch?v=FOIbK4bJKS8
+6. https://www.youtube.com/playlist?list=PL0qQTroQZs5vVmTuBew-nTx9DIu6rRl2c
+7. https://github.com/lszl84
