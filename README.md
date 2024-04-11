@@ -2,43 +2,78 @@
 
 ## Project description
 Create any software program in C++ language and use as many as C++ features learnt in-class.
-• The project size, in terms of functionality and amount of code, must be appropriate for the size of the team. Max team size is 4.
-• It MUST compile and run without any significant problems.
-• 3rd-party software/library is allowed, but it cannot do the majority of the work for your program.
+
+â€¢ The project size, in terms of functionality and amount of code, must be appropriate for the size of the team. Max team size is 4.
+
+â€¢ It MUST compile and run without any significant problems.
+
+â€¢ 3rd-party software/library is allowed, but it cannot do the majority of the work for your program.
+
 
 ## Project Proposal
 Airfoil analysis for as many types of low speed 2D airfoils as possible by reverse engineering from existing test data and varying the input parameters like approach flow velocity, angle of attack, chord length, eccentricity, Reynolds number, etc. If possible, plot lift vs. drag ratios and pressure coefficient distribution, and streamlines around the foil. 
 The project may satisfy most of the grading rubric:
-•	Compilable - should build without errors and warnings on Windows, Linux and Mac.
-•	Runtime errors - reduce/eliminate any runtime errors with unit testing and automation if time permits.
-•	Readability - code comments, readme, and documentation
-•	Math / Technical Knowledge from other areas - Airfoil analysis methods and math for calculations
-•	Independency - cross platform, using CMake and any cross-platform GUI frameworks.
-•	Code Organization - code headers and cpp files in respective directories, images and test data in separate directory, GUI code in different directory, etc.
-•	Robustness - unit tested to handle corner and edge cases.
-•	Resource Usages - no memory leaks, acceptable memory, and CPU usage footprint (use performance tools to monitor if time permits)
-•	Write, compile, and include your own libraries - The analysis math code can be separated out as a library.
-•	All Primitive Data Types - for variables, function parameters etc.
-•	Global and Static variables - trying to avoid global and static variables, but can include if required.
-•	Bitwise Operators - Not sure if bitwise operators will be used (can try to use for setting a flag by bits instead of boolean variables)
-•	Conditional AND Iterative Statements – yes
-•	Functions OR Recursions – yes
-•	Preprocessor – yes
-•	Pointers – yes
-•	References – yes
-•	Function Overloading – yes
-•	Function Pointers OR Lambda Functions – yes
-•	Template Functions OR Template Class – yes
-•	Containers - yes (vectors, mostly, but can design data structures as required)
-•	Struct / Class – yes
-•	Objects – yes
-•	Operator Overloading – yes
-•	Inheritance – yes
-•	Virtual Function / Overriding - yes
-•	GUI - yes (cross platform, using wxWidgets or QT or terminal escape sequences)
-•	File System Handling - yes, reading/writing test data files
-•	Regular Expression - can be used for input validation, or any parsing task if required
-•	Concurrent Programming - can try to run long calculations in parallel by splitting the workload, or run different methods of calculations concurrently for comparison
+
+â€¢	Compilable - should build without errors and warnings on Windows, Linux and Mac.
+
+â€¢	Runtime errors - reduce/eliminate any runtime errors with unit testing and automation if time permits.
+
+â€¢	Readability - code comments, readme, and documentation
+
+â€¢	Math / Technical Knowledge from other areas - Airfoil analysis methods and math for calculations
+
+â€¢	Independency - cross platform, using CMake and any cross-platform GUI frameworks.
+
+â€¢	Code Organization - code headers and cpp files in respective directories, images and test data in separate directory, GUI code in different directory, etc.
+
+â€¢	Robustness - unit tested to handle corner and edge cases.
+
+â€¢	Resource Usages - no memory leaks, acceptable memory, and CPU usage footprint (use performance tools to monitor if time permits)
+
+â€¢	Write, compile, and include your own libraries - The analysis math code can be separated out as a library.
+
+â€¢	All Primitive Data Types - for variables, function parameters etc.
+
+â€¢	Global and Static variables - trying to avoid global and static variables, but can include if required.
+
+â€¢	Bitwise Operators - Not sure if bitwise operators will be used (can try to use for setting a flag by bits instead of boolean variables)
+
+â€¢	Conditional AND Iterative Statements â€“ yes
+
+â€¢	Functions OR Recursions â€“ yes
+
+â€¢	Preprocessor â€“ yes
+
+â€¢	Pointers â€“ yes
+
+â€¢	References â€“ yes
+
+â€¢	Function Overloading â€“ yes
+
+â€¢	Function Pointers OR Lambda Functions â€“ yes
+
+â€¢	Template Functions OR Template Class â€“ yes
+
+â€¢	Containers - yes (vectors, mostly, but can design data structures as required)
+
+â€¢	Struct / Class â€“ yes
+
+â€¢	Objects â€“ yes
+
+â€¢	Operator Overloading â€“ yes
+
+â€¢	Inheritance â€“ yes
+
+â€¢	Virtual Function / Overriding - yes
+
+â€¢	GUI - yes (cross platform, using wxWidgets or QT or terminal escape sequences)
+
+â€¢	File System Handling - yes, reading/writing test data files
+
+â€¢	Regular Expression - can be used for input validation, or any parsing task if required
+
+â€¢	Concurrent Programming - can try to run long calculations in parallel by splitting the workload, or run different methods of calculations concurrently for comparison
+
 
 ## Build Instructions
 1. Update Visual Studio 2022:
