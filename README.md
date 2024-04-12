@@ -76,6 +76,11 @@ The project may satisfy most of the grading rubric:
 
 
 ## Build Instructions
+
+I am not using the two CMake functions, FetchContent_MakeAvailable() and FetchContent_Populate(), for wxWidgets because they are not working. Please follow instructions given below:
+
+### Windows
+
 1. Update Visual Studio 2022:
 	1. C++ Development -> select CLang tools checkbox (let other selections remain as they are)
 2. Upgrade Visual Studio 2022 to latest updates (it may take time).
@@ -127,7 +132,18 @@ The project may satisfy most of the grading rubric:
 
 9. Clone this repository. Open folder in Visual Studio, CMake will run automatically. Build project and you are set!
 
-### Let me know if you run into any problems!
+### MacOS
+1. IDE: Code::Blocks
+2. You can build directly from Terminal too.
+3. wxWidgets installation: https://www.cs.sjsu.edu/~mak/tutorials/InstallwxWidgets.pdf
+
+### Linux
+- You can build through Visual Studio using WSL or on a Linux machine.
+- IDE: VS Code, Code::Blocks.
+- You can also build directly from the CMake terminal.
+- wxWidgets installation: https://www.cs.sjsu.edu/~mak/tutorials/InstallwxWidgets.pdf
+
+Let me know if you run into any problems!
 
 
 ## References
@@ -139,3 +155,5 @@ The project may satisfy most of the grading rubric:
 5. https://www.youtube.com/watch?v=FOIbK4bJKS8
 6. https://www.youtube.com/playlist?list=PL0qQTroQZs5vVmTuBew-nTx9DIu6rRl2c
 7. https://github.com/lszl84
+8. http://airfoiltools.com/airfoil/details?airfoil=n0012-il
+9. https://www.cs.sjsu.edu/~mak/tutorials/InstallwxWidgets.pdf
