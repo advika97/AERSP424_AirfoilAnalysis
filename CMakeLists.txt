@@ -38,7 +38,14 @@ endif()
 
 cmake_print_variables(CMAKE_C_FLAGS CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_EXE_LINKER_FLAGS OpenMP_libomp_LIBRARY)
 
-include_directories(include airfoilgui)
+include_directories(include airfoilgui mathplot aerolib/include)
+
+add_library(mathplot STATIC mathplot/mathplot.cpp)
+add_library(aerolib STATIC aerolib/src/Util.cpp)
+
+# Link wxWidgets and wxMathPlot libraries
+target_compile_definitions(mathplot PRIVATE _UNICODE=1)
+target_link_libraries(mathplot ${wxWidgets_LIBRARIES})
 
 # Add source to this project's executable.
 set(PROJECT_SOURCES
@@ -60,6 +67,7 @@ set(PROJECT_SOURCES
 
 
 add_executable (${PROJECT_NAME} ${PROJECT_SOURCES} )
+file(COPY data/ DESTINATION data)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Airfoil PROPERTY CXX_STANDARD 20)
@@ -69,7 +77,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE _UNICODE=1)
 if(WIN32)
     #target_compile_definitions(${PROJECT_NAME} PRIVATE WXUSINGDLL=1)
 endif()
-target_link_libraries(${PROJECT_NAME} PRIVATE ${wxWidgets_LIBRARIES} ${OpenMP_libomp_LIBRARY})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${wxWidgets_LIBRARIES} ${OpenMP_libomp_LIBRARY} mathplot aerolib)
 set_target_properties(${PROJECT_NAME} PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
@@ -80,3 +88,4 @@ install(TARGETS ${PROJECT_NAME}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
+install(DIRECTORY data/ DESTINATION data)

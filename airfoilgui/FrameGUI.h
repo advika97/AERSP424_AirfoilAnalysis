@@ -24,9 +24,6 @@
 #include <wx/sizer.h>
 #include <wx/panel.h>
 #include <wx/splitter.h>
-#include <wx/propgrid/propgrid.h>
-#include <wx/propgrid/manager.h>
-#include <wx/propgrid/advprops.h>
 #include <wx/notebook.h>
 #include <wx/frame.h>
 
@@ -59,24 +56,9 @@ class AirfoilFrameGUI : public wxFrame
 		wxPanel* m_panel8;
 		wxSplitterWindow* m_splitter4;
 		wxPanel* m_panel9;
-		wxPropertyGridManager* m_propertyGridManager2;
-		wxPropertyGridPage* m_propertyGridPage2;
-		wxPGProperty* m_propertyGridItem3;
-		wxPGProperty* m_propertyGridItem4;
-		wxPGProperty* m_propertyGridItem5;
-		wxPGProperty* m_propertyGridItem6;
-		wxPropertyGridManager* m_propertyGridManager21;
-		wxPropertyGridPage* m_propertyGridPage3;
-		wxPGProperty* m_propertyGridItem10;
-		wxPGProperty* m_propertyGridItem8;
-		wxPGProperty* m_propertyGridItem9;
-		wxPropertyGridManager* m_propertyGridManager3;
-		wxPropertyGridPage* m_propertyGridPage4;
-		wxPGProperty* m_propertyGridItem111;
-		wxPGProperty* m_propertyGridItem11;
-		wxPGProperty* m_propertyGridItem12;
-		wxPGProperty* m_propertyGridItem13;
-		wxPanel* m_panel_plot;
+		wxPanel* m_panel_plot1;
+		wxPanel* m_panel_plot2;
+		wxPanel* m_panel_plot3;
 
 		// Virtual event handlers, override them in your derived class
 		virtual void OnClose( wxCloseEvent& event ) { event.Skip(); }

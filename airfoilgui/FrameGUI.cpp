@@ -102,51 +102,16 @@ AirfoilFrameGUI::AirfoilFrameGUI( wxWindow* parent, wxWindowID id, const wxStrin
 
 	m_panel9 = new wxPanel( m_splitter4, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer* bSizer19;
-	bSizer19 = new wxBoxSizer( wxVERTICAL );
+	bSizer19 = new wxBoxSizer( wxHORIZONTAL );
 
-	wxBoxSizer* bSizer15;
-	bSizer15 = new wxBoxSizer( wxHORIZONTAL );
+	m_panel_plot1 = new wxPanel( m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	bSizer19->Add( m_panel_plot1, 1, wxEXPAND | wxALL, 5 );
 
-	m_propertyGridManager2 = new wxPropertyGridManager(m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxPGMAN_DEFAULT_STYLE);
-	m_propertyGridManager2->SetExtraStyle( wxPG_EX_MODE_BUTTONS );
+	m_panel_plot2 = new wxPanel( m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	bSizer19->Add( m_panel_plot2, 1, wxEXPAND | wxALL, 5 );
 
-	m_propertyGridPage2 = m_propertyGridManager2->AddPage( wxT("Reynolds"), wxNullBitmap );
-	m_propertyGridItem3 = m_propertyGridPage2->Append( new wxPropertyCategory( wxT("Reynolds Number"), wxT("Reynolds Number") ) );
-	m_propertyGridItem4 = m_propertyGridPage2->Append( new wxIntProperty( wxT("First"), wxT("First") ) );
-	m_propertyGridItem5 = m_propertyGridPage2->Append( new wxIntProperty( wxT("Last"), wxT("Last") ) );
-	m_propertyGridItem6 = m_propertyGridPage2->Append( new wxIntProperty( wxT("Step"), wxT("Step") ) );
-	bSizer15->Add( m_propertyGridManager2, 0, wxALL, 5 );
-
-	m_propertyGridManager21 = new wxPropertyGridManager(m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxPGMAN_DEFAULT_STYLE);
-	m_propertyGridManager21->SetExtraStyle( wxPG_EX_MODE_BUTTONS );
-
-	m_propertyGridPage3 = m_propertyGridManager21->AddPage( wxT("Transition"), wxNullBitmap );
-	m_propertyGridItem10 = m_propertyGridPage3->Append( new wxPropertyCategory( wxT("Transition"), wxT("Transition") ) );
-	m_propertyGridItem8 = m_propertyGridPage3->Append( new wxFloatProperty( wxT("Upper"), wxT("Upper") ) );
-	m_propertyGridItem9 = m_propertyGridPage3->Append( new wxFloatProperty( wxT("Lower"), wxT("Lower") ) );
-	bSizer15->Add( m_propertyGridManager21, 0, wxALL, 5 );
-
-	m_propertyGridManager3 = new wxPropertyGridManager(m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxPGMAN_DEFAULT_STYLE);
-	m_propertyGridManager3->SetExtraStyle( wxPG_EX_MODE_BUTTONS );
-
-	m_propertyGridPage4 = m_propertyGridManager3->AddPage( wxT("Angles of Attack"), wxNullBitmap );
-	m_propertyGridItem111 = m_propertyGridPage4->Append( new wxPropertyCategory( wxT("Angles of Attack"), wxT("Angles of Attack") ) );
-	m_propertyGridItem11 = m_propertyGridPage4->Append( new wxFloatProperty( wxT("First"), wxT("First") ) );
-	m_propertyGridItem12 = m_propertyGridPage4->Append( new wxFloatProperty( wxT("Last"), wxT("Last") ) );
-	m_propertyGridItem13 = m_propertyGridPage4->Append( new wxFloatProperty( wxT("Step"), wxT("Step") ) );
-	bSizer15->Add( m_propertyGridManager3, 0, wxALL, 5 );
-
-
-	bSizer19->Add( bSizer15, 0, wxALL|wxEXPAND, 5 );
-
-	wxBoxSizer* bSizer161;
-	bSizer161 = new wxBoxSizer( wxVERTICAL );
-
-	m_panel_plot = new wxPanel( m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	bSizer161->Add( m_panel_plot, 1, wxEXPAND | wxALL, 5 );
-
-
-	bSizer19->Add( bSizer161, 1, wxEXPAND, 5 );
+	m_panel_plot3 = new wxPanel( m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	bSizer19->Add( m_panel_plot3, 1, wxEXPAND | wxALL, 5 );
 
 
 	m_panel9->SetSizer( bSizer19 );
