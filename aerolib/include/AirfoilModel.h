@@ -1,10 +1,16 @@
+#ifndef _AIRFOILMODEL_H_
+#define _AIRFOILMODEL_H_
+
 #include <string>
+#include <vector>
 #include "DoublePoint.h"
+
+using namespace std;
 
 class AirfoilModel {
 public:
     std::string sName = "unknown";
-    DoublePoint* ptShape = nullptr;
+    vector<DoublePoint> ptShape;
     static const int POINTCOUNT = 121;
     double dAlfaStall[2];
     double ReynoldsNumber = 0.0;
@@ -16,9 +22,9 @@ public:
     virtual double getReynoldsNumber() = 0;
     virtual double getMachNumber() = 0;
     void SetPlateShape();
-    void setShapeFromFile(std::string filePath);
     void respline();
     virtual void setTEThickness(double TEThicknessPercent) = 0;
 };
 
 
+#endif

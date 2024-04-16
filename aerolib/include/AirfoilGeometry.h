@@ -1,7 +1,12 @@
+#ifndef _AIRFOILGEOMETRY_H_
+#define _AIRFOILGEOMETRY_H_
+
 #include <string>
 #include <vector>
 #include "AirfoilElement.h"
 #include "DoublePoint.h"
+
+using namespace std;
 
 class AirfoilGeometry {
 private:
@@ -29,10 +34,10 @@ public:
 
 private:
     void Init() ;
-    int CountElements(int nPoints, double* X, double* Y) ;
+    int CountElements(int nPoints, vector<double>& X, vector<double>& Y) ;
 
     void UpdateProps(const DoublePoint& ref);
-    void setMirrorGeometry(bool mirror) ;
+    //void setMirrorGeometry(bool mirror) ;
 
 public:
     void setName(const std::string& Name);
@@ -41,34 +46,19 @@ public:
 
     int getElementCount() ;
 
-    void setPoints(int nPoints, double* X, double* Y);
+    void setPoints(int nPoints, vector<double>& X, vector<double>& Y);
     void setTEThickness(double newTEThickness) ;
 
     void addElement(const AirfoilElement& theElement);
     
     void deleteElement(int nElementToDelete) ;
 
-    bool fromFile(std::string filePath);
-
-    int checkFile(std::string fileName) ;
-    void fromString(std::string& defaultName, const std::string& buffer) ;
-
-    std::string toXML() ;
-    bool fromImage(const std::string& fileName, int pointCount) ;
     void setMirrorGeometry(bool b) ;
 
     void UpdateProps(std::string ptRef) ;
 
     std::string stripFileName(std::string filePath);
 
-    bool fromXML(const std::string& buffer);
-
-    std::string toGeo() const ;
-
-    std::string toJava() const;
-
-    std::string toJavaDP() const ;
-    
     bool IsPointInside(const DoublePoint& pt) const;
 
     void ReSpline(int NewPointCount) ;
@@ -78,8 +68,9 @@ public:
     bool IsGroundEffect() const ;
     bool IsFroudeEffect() const ;
 
-    DoublePoint getBounds(int boundsType) const ;
+    DoublePoint getBounds(int boundsType) ;
 
     
 };
 
+#endif

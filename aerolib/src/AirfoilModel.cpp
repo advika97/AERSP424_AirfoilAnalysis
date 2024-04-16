@@ -4,25 +4,15 @@
 #include "AirfoilElement.h"
 
 void AirfoilModel::SetPlateShape() {
-    ptShape = DoublePoint::allocateArray(POINTCOUNT);
+    ptShape.reserve(POINTCOUNT);
     // Implement setting plate shape here
-}
-
-void AirfoilModel::setShapeFromFile(std::string filePath) {
-    AirfoilGeometry theShape;
-    if (theShape.fromFile(filePath)) {
-        AirfoilElement& e = theShape.Element[0];
-        ptShape = DoublePoint::allocateArray(e.PointCount);
-        e.getPoints(ptShape);
-        respline();
-    }
 }
 
 void AirfoilModel::respline() {
     AirfoilElement e;
-    e.setPoints(POINTCOUNT, ptShape);
-    e.ReSpline(POINTCOUNT);
-    ptShape = DoublePoint::allocateArray(POINTCOUNT);
+    e.setPoints((int)POINTCOUNT, ptShape);
+    e.ReSpline((int)POINTCOUNT);
+    ptShape.resize(POINTCOUNT);
     e.getPoints(ptShape);
 }
 

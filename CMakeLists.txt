@@ -40,8 +40,28 @@ cmake_print_variables(CMAKE_C_FLAGS CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_
 
 include_directories(include airfoilgui mathplot aerolib/include)
 
+set(AEROLIB_SRCS 
+	"aerolib/src/Airfoil.cpp" "aerolib/include/Airfoil.h" 
+	"aerolib/include/AirfoilElement.h" "aerolib/src/AirfoilElement.cpp" 
+	"aerolib/src/AirfoilModel.cpp" "aerolib/include/AirfoilModel.h" 
+	"aerolib/include/AirfoilParameter.h" 
+	"aerolib/src/AirfoilShape.cpp" "aerolib/include/AirfoilShape.h" 
+	"aerolib/include/AnalyticalAirfoil.h" 
+	"aerolib/src/BoolParameter.cpp" "aerolib/include/BoolParameter.h" 
+	"aerolib/src/DoubleParameter.cpp" "aerolib/include/DoubleParameter.h" 
+	"aerolib/src/DoublePoint.cpp" "aerolib/include/DoublePoint.h" 
+	"aerolib/src/NACA4.cpp" "aerolib/include/NACA4.h" 
+	"aerolib/include/TabulatedAirfoil.h" 
+	"aerolib/include/XMLBlock.h"
+	"aerolib/include/Circle.h" "aerolib/src/Circle.cpp" 
+	"aerolib/include/Spline.h" 
+	"aerolib/include/RationalSpline.h" "aerolib/src/RationalSpline.cpp"
+	"aerolib/include/AirfoilGeometry.h" "aerolib/src/AirfoilGeometry.cpp"
+	"aerolib/include/Util.h" "aerolib/src/Util.cpp"
+)
+
 add_library(mathplot STATIC mathplot/mathplot.cpp)
-add_library(aerolib STATIC aerolib/src/Util.cpp)
+add_library(aerolib STATIC ${AEROLIB_SRCS})
 
 # Link wxWidgets and wxMathPlot libraries
 target_compile_definitions(mathplot PRIVATE _UNICODE=1)

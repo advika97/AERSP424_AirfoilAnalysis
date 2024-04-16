@@ -10,6 +10,12 @@ Airfoil::Airfoil(std::string BaseDir) {
     m_BaseDir = BaseDir;
 }
 
+Airfoil::~Airfoil()
+{
+    if (m_AirfoilModel != nullptr)
+        delete m_AirfoilModel;
+}
+
 void Airfoil::setBaseDir(std::string BaseDir) {
     m_BaseDir = BaseDir;
 }
@@ -63,14 +69,14 @@ std::string Airfoil::getName() {
     return name.str();
 }
 
-DoublePoint* Airfoil::getShape() {
+vector<DoublePoint> Airfoil::getShape() {
     return m_AirfoilModel->ptShape;
 }
 
 double Airfoil::getThickness() {
     double yMax = -1000.0;
     double yMin = 1000.0;
-    if (m_AirfoilModel->ptShape != nullptr) {
+    if (m_AirfoilModel->ptShape.size() > 0) {
         for (int i = 0; i < sizeof(m_AirfoilModel->ptShape) / sizeof(DoublePoint); ++i) {
             yMax = std::max(yMax, m_AirfoilModel->ptShape[i].dY);
             yMin = std::min(yMin, m_AirfoilModel->ptShape[i].dY);

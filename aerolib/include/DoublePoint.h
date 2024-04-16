@@ -1,3 +1,6 @@
+#ifndef _DOUBLEPOINT_H_
+#define _DOUBLEPOINT_H_
+
 #include <string>
 #include <cmath>
 #include <locale>
@@ -38,4 +41,6 @@ public:
 
     static DoublePoint* allocateArray(int nElements) ;
 };
+
+#endif // !
 

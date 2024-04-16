@@ -1,5 +1,5 @@
-#ifndef BOOLPARAMETER_H
-#define BOOLPARAMETER_H
+#ifndef _BOOLPARAMETER_H_
+#define _BOOLPARAMETER_H_
 
 #include "AirfoilParameter.h" // Include base class header
 
@@ -16,4 +16,4 @@ public:
 
 };
 
-#endif // BOOLPARAMETER_H
+#endif 

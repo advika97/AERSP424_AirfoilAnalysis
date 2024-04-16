@@ -1,3 +1,6 @@
+#ifndef _ANALYTICALAIRFOIL_H_
+#define _ANALYTICALAIRFOIL_H_
+
 class AnalyticalAirfoil : public AirfoilModel {
 public:
     bool Init(int nAirfoilIndex) override { return true; }
@@ -7,3 +10,5 @@ public:
     double getMachNumber() override { return 0.0; }
     void setTEThickness(double TEThicknessPercent) override {}
 };
+
+#endif

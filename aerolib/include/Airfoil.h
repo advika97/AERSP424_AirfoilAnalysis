@@ -1,3 +1,5 @@
+#ifndef _AIRFOIL_H_
+#define _AIRFOIL_H_
 
 #include <string>
 #include <cmath>
@@ -17,13 +19,14 @@ private:
 public:
     Airfoil() : Airfoil(".") {}
     Airfoil(std::string BaseDir);
+    virtual ~Airfoil();
 
     void setBaseDir(std::string BaseDir);
 
     bool Init(int nAirfoilNo) ;
     std::string getName() ;
 
-    DoublePoint* getShape();
+    vector<DoublePoint> getShape();
 
     double getThickness();
 
@@ -44,3 +47,4 @@ public:
     double getMachNumber() ;
 };
 
+#endif
